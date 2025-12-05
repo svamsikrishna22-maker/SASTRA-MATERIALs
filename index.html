@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SASTRA</title>
+  <title>SASTRA – Semester Materials</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,6 +15,7 @@
       flex-direction: column;
       align-items: center;
     }
+
     header {
       text-align: center;
       padding: 20px;
@@ -24,16 +26,19 @@
       width: 90%;
       max-width: 800px;
     }
+
     header img {
       max-width: 180px;
       height: auto;
       margin-bottom: 10px;
     }
+
     header h1 {
       margin: 0;
       font-size: 32px;
       color: #003366;
     }
+
     .container {
       background: #fff;
       padding: 20px;
@@ -41,15 +46,14 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       width: 90%;
       max-width: 800px;
+      text-align: center;
     }
+
     h2 {
       color: #003366;
-      margin-top: 25px;
-      margin-bottom: 10px;
-      text-align: center;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
+      margin-bottom: 15px;
     }
+
     ul {
       list-style: none;
       padding: 0;
@@ -58,11 +62,13 @@
       gap: 15px;
       align-items: center;
     }
+
     li {
       width: 100%;
       text-align: center;
     }
-    a {
+
+    button, a {
       text-decoration: none;
       color: #fff;
       background-color: #0077cc;
@@ -71,20 +77,39 @@
       display: inline-block;
       width: 100%;
       max-width: 300px;
+      border: none;
+      cursor: pointer;
       transition: background 0.3s;
+      font-size: 16px;
     }
-    a:hover {
+
+    button:hover, a:hover {
       background-color: #005fa3;
     }
+
+    .semester-content {
+      display: none;
+    }
+
+    .back-btn {
+      background-color: #444;
+      margin-top: 20px;
+    }
+
+    .back-btn:hover {
+      background-color: #222;
+    }
+
     @media (max-width: 500px) {
       header h1 {
         font-size: 26px;
       }
-      a {
+      button, a {
         padding: 10px 20px;
       }
     }
   </style>
+
 </head>
 <body>
 
@@ -93,14 +118,31 @@
     <h1>SASTRA</h1>
   </header>
 
-  <div class="container">
+  <!-- SEMESTER SELECTION -->
+  <div class="container" id="semester-menu">
+    <h2>Select Your Semester</h2>
+    <ul>
+      <li><button onclick="openSemester('sem1')">1st Semester</button></li>
+      <li><button onclick="openSemester('sem2')">2nd Semester</button></li>
+      <li><button onclick="openSemester('sem3')">3rd Semester</button></li>
+      <li><button onclick="openSemester('sem4')">4th Semester</button></li>
+      <li><button onclick="openSemester('sem5')">5th Semester</button></li>
+      <li><button onclick="openSemester('sem6')">6th Semester</button></li>
+    </ul>
+  </div>
 
-    <h2>1st Semester</h2>
+  <!-- 1st Semester -->
+  <div class="container semester-content" id="sem1">
+    <h2>1st Semester Materials</h2>
     <ul>
       <li><a href="#" target="_blank">Upload file here</a></li>
     </ul>
+    <button class="back-btn" onclick="goBack()">⬅ Back to Semesters</button>
+  </div>
 
-    <h2>2nd Semester</h2>
+  <!-- 2nd Semester -->
+  <div class="container semester-content" id="sem2">
+    <h2>2nd Semester Materials</h2>
     <ul>
       <li>
         <a href="https://docs.google.com/document/d/1jFHtotGo7oMONMAY0WEjC4tYfTQv7_hq-T_qWGXNNtU/edit?tab=t.0#heading=h.3h1fcnxpotsf" target="_blank">
@@ -108,28 +150,61 @@
         </a>
       </li>
     </ul>
-
-    <h2>3rd Semester</h2>
-    <ul>
-      <li><a href="#" target="_blank">Upload file here</a></li>
-    </ul>
-
-    <h2>4th Semester</h2>
-    <ul>
-      <li><a href="#" target="_blank">Upload file here</a></li>
-    </ul>
-
-    <h2>5th Semester</h2>
-    <ul>
-      <li><a href="#" target="_blank">Upload file here</a></li>
-    </ul>
-
-    <h2>6th Semester</h2>
-    <ul>
-      <li><a href="#" target="_blank">Upload file here</a></li>
-    </ul>
-
+    <button class="back-btn" onclick="goBack()">⬅ Back to Semesters</button>
   </div>
+
+  <!-- 3rd Semester -->
+  <div class="container semester-content" id="sem3">
+    <h2>3rd Semester Materials</h2>
+    <ul>
+      <li><a href="#" target="_blank">Upload file here</a></li>
+    </ul>
+    <button class="back-btn" onclick="goBack()">⬅ Back to Semesters</button>
+  </div>
+
+  <!-- 4th Semester -->
+  <div class="container semester-content" id="sem4">
+    <h2>4th Semester Materials</h2>
+    <ul>
+      <li><a href="#" target="_blank">Upload file here</a></li>
+    </ul>
+    <button class="back-btn" onclick="goBack()">⬅ Back to Semesters</button>
+  </div>
+
+  <!-- 5th Semester -->
+  <div class="container semester-content" id="sem5">
+    <h2>5th Semester Materials</h2>
+    <ul>
+      <li><a href="#" target="_blank">Upload file here</a></li>
+    </ul>
+    <button class="back-btn" onclick="goBack()">⬅ Back to Semesters</button>
+  </div>
+
+  <!-- 6th Semester -->
+  <div class="container semester-content" id="sem6">
+    <h2>6th Semester Materials</h2>
+    <ul>
+      <li><a href="#" target="_blank">Upload file here</a></li>
+    </ul>
+    <button class="back-btn" onclick="goBack()">⬅ Back to Semesters</button>
+  </div>
+
+  <script>
+    function openSemester(id) {
+      document.getElementById("semester-menu").style.display = "none";
+      document.querySelectorAll(".semester-content").forEach(sec => {
+        sec.style.display = "none";
+      });
+      document.getElementById(id).style.display = "block";
+    }
+
+    function goBack() {
+      document.querySelectorAll(".semester-content").forEach(sec => {
+        sec.style.display = "none";
+      });
+      document.getElementById("semester-menu").style.display = "block";
+    }
+  </script>
 
 </body>
 </html>
